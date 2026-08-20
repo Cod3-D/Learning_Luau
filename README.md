@@ -1,6 +1,6 @@
 # Learning_-Luau-
 # Mis apuntes de Luau
-                                                               #Reglas de Luau 
+                                                           #Reglas de Luau 
 
 
 1)Reglas de Sintaxis Básica:
@@ -17,7 +17,7 @@
 
 *No pueden usar palabras reservadas del lenguaje para nombrar alguna variable o funcion (local, function, if, end, then, else, while, return, nil, true, false, and, or, not, etc.).
 
-*Punto y coma opcional: No es necesario colocar ; al final de cada línea de código (Solamente usarlo si decides escribir varias órdenes juntas sin dar un salto de línea, el punto y coma le ayuda a Lua a saber exactamente dónde termina una instrucción y dónde empieza la otra).
+*Punto y coma opcional: No es necesario colocar ; al final de cada línea de código (Solamente usarlo si decides escribir varias órdenes juntas sin dar un salto de línea, el punto y coma le ayuda a Luau a saber exactamente dónde termina una instrucción y dónde empieza la otra).
 
 2)Variables y Alcance (Scope):
 
