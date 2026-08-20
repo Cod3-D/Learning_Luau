@@ -90,4 +90,4 @@ Concatenar con números: Puedes unir texto y números con .. (por ejemplo: "Punt
 
 El operador # también mide tablas: No solo sirve para saber la longitud de un texto (#"Hola" = 4), también sirve para saber cuántos elementos hay dentro de una lista o tabla.
 
-No intentes sumar texto con +: Si haces "Hola" + "Mundo", Luau fallará intentando convertir las palabras a números. La única forma de unir cadenas es con ...
+No intentes sumar texto con +: Si haces "Hola" + "Mundo", Luau fallará intentando convertir las palabras a números. La única forma de unir cadenas es con ..
