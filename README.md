@@ -50,3 +50,17 @@ Comentarios:
 *Regla de Seguridad (Never Trust the Client):
 - En OnServerEvent, el primer parámetro siempre es automáticamente el jugador que envió la señal (parámetro implícito).
 - El cliente NUNCA debe enviar datos críticos como cantidades de oro o vida. El cliente solo pide realizar una acción y el servidor valida si es posible.
+
+6)Comunicación Bidireccional con RemoteFunctions:
+
+*Diferencia con RemoteEvents:
+- RemoteEvents solo envían una señal ("dispara y olvida").
+- RemoteFunctions envían una solicitud y esperan obligatoriamente una respuesta (retorno de datos) para continuar ejecutando el código.
+
+*Uso de RemoteFunctions:
+- Se ubican obligatoriamente dentro de ReplicatedStorage.
+- Solicitud del Cliente al Servidor: El LocalScript llama a InvokeServer() y pausa su ejecución hasta recibir la respuesta. El Script del servidor procesa la petición asignando una función a la propiedad OnServerInvoke y regresa los valores con la palabra clave return.
+
+*Regla de Seguridad Crítica (Peligro de InvokeClient):
+- En OnServerInvoke, el primer parámetro es automáticamente el jugador que hizo la consulta (parámetro implícito).
+- ¡NUNCA usar InvokeClient en el servidor!: Si el servidor invoca al cliente para pedirle datos, un usuario con hacks puede evitar responder, congelando el script del servidor indefinidamente y rompiendo el juego para todos los demás jugadores.
