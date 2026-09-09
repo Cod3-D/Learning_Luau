@@ -61,6 +61,17 @@ Comentarios:
 - Se ubican obligatoriamente dentro de ReplicatedStorage.
 - Solicitud del Cliente al Servidor: El LocalScript llama a InvokeServer() y pausa su ejecución hasta recibir la respuesta. El Script del servidor procesa la petición asignando una función a la propiedad OnServerInvoke y regresa los valores con la palabra clave return.
 
+7)Transformación, Movimiento y Librería Math:
+
+*Uso de CFrame para Rotación y Posición:
+- Las partes en Roblox usan CFrame para combinar posición 3D y orientación.
+- La multiplicación de CFrames (CFrame1 * CFrame2) permite aplicar transformaciones relativas como rotaciones sin perder la posición original.
+
+*Librería Matemáticas Básicas en Movimiento:
+- math.rad(grados): Convierte grados sexagesimales a radianes. Es obligatorio usarlo en CFrame.Angles(x, y, z) ya que Luau no lee rotación en grados directamente.
+- math.sin(tiempo): Genera una curva suave oscilatoria entre -1 y 1. Ideal para crear efectos de flotación o plataformas que suben y bajan continuamente.
+- Requiere que la parte tenga Anchored = true para evitar conflictos con el motor de físicas.
+
 *Regla de Seguridad Crítica (Peligro de InvokeClient):
 - En OnServerInvoke, el primer parámetro es automáticamente el jugador que hizo la consulta (parámetro implícito).
 - ¡NUNCA usar InvokeClient en el servidor!: Si el servidor invoca al cliente para pedirle datos, un usuario con hacks puede evitar responder, congelando el script del servidor indefinidamente y rompiendo el juego para todos los demás jugadores.
